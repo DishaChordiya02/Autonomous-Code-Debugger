@@ -12,13 +12,10 @@ This project is an autonomous code debugging system that analyzes, detects, and 
 ✅ Automated Debugging & Optimization – Faster issue resolution
 
 🛠️ Tech Stack
-Python (Flask, AST module)
-
-LLaMA 3-8B-8192 (Groq API)
-
-Git & GitHub (Version Control)
-
-VS Code (Development Environment)
+1.Python (Flask, AST module)
+2.LLaMA 3-8B-8192 (Groq API)
+3.Git & GitHub (Version Control)
+4.VS Code (Development Environment)
 
 🚀 How It Works
 Code Input – Users submit code via the Flask API
