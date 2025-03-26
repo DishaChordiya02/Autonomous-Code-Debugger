@@ -16,15 +16,15 @@ def autonomous_debugger(source_code):
     issues = analyze_code(source_code)  # Step 1: Detect issues using AST
 
     if not issues:
-        console.print(Panel("✅ No issues found in the code!", title="AI Debugger", style="green"))
+        console.print(Panel(" No issues found in the code!", title="AI Debugger", style="green"))
         return
 
     for issue in issues:
-        console.print(Panel(f"🔍 [bold yellow]Issue Detected:[/bold yellow]\n{issue}", style="yellow"))
+        console.print(Panel(f" [bold yellow]Issue Detected:[/bold yellow]\n{issue}", style="yellow"))
 
         fix = get_suggestions(issue, source_code)  # Step 2: Get AI-generated fixes
         
-        console.print(Panel(f"💡 [bold cyan]Suggested Fix:[/bold cyan]\n{fix}", style="cyan"))
+        console.print(Panel(f" [bold cyan]Suggested Fix:[/bold cyan]\n{fix}", style="cyan"))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AI Debugger for Python Code")
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     if not os.path.exists(args.file):
-        console.print(f"❌ [bold red]Error:[/bold red] The file '{args.file}' does not exist.", style="red")
+        console.print(f" [bold red]Error:[/bold red] The file '{args.file}' does not exist.", style="red")
         exit(1)
 
     # Read the content of the provided file
@@ -44,5 +44,5 @@ if __name__ == "__main__":
     console.print(Panel(Syntax(code_content, "python", theme="monokai", line_numbers=True), title="📜 Source Code", style="blue"))
 
     # Run the debugger on the file's content
-    console.print("\n🚀 [bold green]AI Debugger Output:[/bold green]\n", style="green")
+    console.print("\n [bold green]AI Debugger Output:[/bold green]\n", style="green")
     autonomous_debugger(code_content)
